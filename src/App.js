@@ -19,15 +19,13 @@ function App() {
     setCookieValue(
       cookies.get("abc", {
         path: "/",
-        domain: process.env.REACT_APP_DOMAIN,
       })
-    ); // Pacman
+    );
   };
 
   const handleRemove = () => {
     cookies.remove("abc", {
       path: "/",
-      domain: process.env.REACT_APP_DOMAIN,
     });
   };
 
@@ -42,7 +40,7 @@ function App() {
       cookies.get("abcNormal", {
         path: "/",
       })
-    ); // Pacman
+    );
   };
 
   const handleNormalRemove = () => {
@@ -53,13 +51,13 @@ function App() {
 
   return (
     <div className="App">
-      <h1>PROGRAMMIZ CROSS SESSION COOKIE TEST IN REACT</h1>
+      <h1>{process.env.REACT_APP_DOMAIN} CROSS SESSION COOKIE TEST IN REACT</h1>
       <button onClick={handleAdd}>Add Cookie</button> &nbsp;
       <button onClick={handleRead}>Read Cookie</button> &nbsp;
       <button onClick={handleRemove}>Remove Cookie</button>
       <br />
       <div>Cookie: {cookieValue}</div>
-      <h1>PROGRAMMIZ LOCAL SESSION COOKIE TEST IN REACT</h1>
+      <h1>{process.env.REACT_APP_DOMAIN} LOCAL SESSION COOKIE TEST IN REACT</h1>
       <button onClick={handleNormalAdd}>Add Cookie</button> &nbsp;
       <button onClick={handleNormalRead}>Read Cookie</button> &nbsp;
       <button onClick={handleNormalRemove}>Remove Cookie</button>
