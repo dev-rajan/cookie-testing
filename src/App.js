@@ -26,6 +26,7 @@ function App() {
   const handleRemove = () => {
     cookies.remove("abc", {
       path: "/",
+      domain: process.env.REACT_APP_DOMAIN,
     });
   };
 
