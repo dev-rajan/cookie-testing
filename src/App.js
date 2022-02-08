@@ -9,15 +9,26 @@ function App() {
   const cookies = new Cookies();
 
   const handleAdd = () => {
-    cookies.set("abc", "Test Cookie", { path: "/", domain: '.netlify.app' });
+    cookies.set("abc", "Test Cookie", {
+      path: "/",
+      domain: process.env.REACT_PUBLIC_DOMAIN,
+    });
   };
 
   const handleRead = () => {
-    setCookieValue(cookies.get("abc")); // Pacman
+    setCookieValue(
+      cookies.get("abc", {
+        path: "/",
+        domain: process.env.REACT_PUBLIC_DOMAIN,
+      })
+    ); // Pacman
   };
 
   const handleRemove = () => {
-    cookies.remove("abc", { path: "/" });
+    cookies.remove("abc", {
+      path: "/",
+      domain: process.env.REACT_PUBLIC_DOMAIN,
+    });
   };
 
   return (
