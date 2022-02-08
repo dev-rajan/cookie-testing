@@ -31,12 +31,38 @@ function App() {
     });
   };
 
+  const handleNormalAdd = () => {
+    cookies.set("abcNormal", "React Test Cookie", {
+      path: "/",
+    });
+  };
+
+  const handleNormalRead = () => {
+    setCookieValue(
+      cookies.get("abcNormal", {
+        path: "/",
+      })
+    ); // Pacman
+  };
+
+  const handleNormalRemove = () => {
+    cookies.remove("abcNormal", {
+      path: "/",
+    });
+  };
+
   return (
     <div className="App">
-      <h1>PROGRAMMIZ SESSION COOKIE TEST IN REACT</h1>
+      <h1>PROGRAMMIZ CROSS SESSION COOKIE TEST IN REACT</h1>
       <button onClick={handleAdd}>Add Cookie</button> &nbsp;
       <button onClick={handleRead}>Read Cookie</button> &nbsp;
       <button onClick={handleRemove}>Remove Cookie</button>
+      <br />
+      <div>Cookie: {cookieValue}</div>
+      <h1>PROGRAMMIZ LOCAL SESSION COOKIE TEST IN REACT</h1>
+      <button onClick={handleNormalAdd}>Add Cookie</button> &nbsp;
+      <button onClick={handleNormalRead}>Read Cookie</button> &nbsp;
+      <button onClick={handleNormalRemove}>Remove Cookie</button>
       <br />
       <div>Cookie: {cookieValue}</div>
     </div>
