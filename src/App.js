@@ -11,7 +11,7 @@ function App() {
   const handleAdd = () => {
     cookies.set("abc", "Test Cookie", {
       path: "/",
-      domain: process.env.REACT_PUBLIC_DOMAIN,
+      domain: process.env.REACT_APP_DOMAIN,
     });
   };
 
@@ -19,7 +19,7 @@ function App() {
     setCookieValue(
       cookies.get("abc", {
         path: "/",
-        domain: process.env.REACT_PUBLIC_DOMAIN,
+        domain: process.env.REACT_APP_DOMAIN,
       })
     ); // Pacman
   };
@@ -27,7 +27,7 @@ function App() {
   const handleRemove = () => {
     cookies.remove("abc", {
       path: "/",
-      domain: process.env.REACT_PUBLIC_DOMAIN,
+      domain: process.env.REACT_APP_DOMAIN,
     });
   };
 
