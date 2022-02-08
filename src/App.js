@@ -10,7 +10,7 @@ function App() {
   const cookies = new Cookies();
 
   const handleAdd = () => {
-    cookies.set("abc", "Test Cookie", {
+    cookies.set("abc", "Cross Domain Cookie", {
       path: "/",
       domain: process.env.REACT_APP_DOMAIN,
     });
@@ -32,7 +32,7 @@ function App() {
   };
 
   const handleNormalAdd = () => {
-    cookies.set("abcNormal", "React Test Cookie", {
+    cookies.set("abcNormal", "Normal Local Cookie", {
       path: "/",
     });
   };
