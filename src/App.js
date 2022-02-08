@@ -13,7 +13,7 @@ function App() {
   };
 
   const handleRead = () => {
-    setCookieValue(cookies.get("Cookie")); // Pacman
+    setCookieValue(cookies.get("abc")); // Pacman
   };
 
   const handleRemove = () => {
