@@ -4,7 +4,8 @@ import Cookies from "universal-cookie/es6";
 import "./App.css";
 
 function App() {
-  const [cookieValue, setCookieValue] = useState("");
+  const [crossCookie, setCrossCookie] = useState("");
+  const [normalCookie, setNormalCookie] = useState("");
 
   const cookies = new Cookies();
 
@@ -16,7 +17,7 @@ function App() {
   };
 
   const handleRead = () => {
-    setCookieValue(
+    setCrossCookie(
       cookies.get("abc", {
         path: "/",
       })
@@ -37,7 +38,7 @@ function App() {
   };
 
   const handleNormalRead = () => {
-    setCookieValue(
+    setNormalCookie(
       cookies.get("abcNormal", {
         path: "/",
       })
@@ -57,13 +58,13 @@ function App() {
       <button onClick={handleRead}>Read Cookie</button> &nbsp;
       <button onClick={handleRemove}>Remove Cookie</button>
       <br />
-      <div>Cookie: {cookieValue}</div>
+      <div>Cookie: {crossCookie}</div>
       <h1>{process.env.REACT_APP_DOMAIN} LOCAL SESSION COOKIE TEST IN REACT</h1>
       <button onClick={handleNormalAdd}>Add Cookie</button> &nbsp;
       <button onClick={handleNormalRead}>Read Cookie</button> &nbsp;
       <button onClick={handleNormalRemove}>Remove Cookie</button>
       <br />
-      <div>Cookie: {cookieValue}</div>
+      <div>Cookie: {normalCookie}</div>
     </div>
   );
 }
