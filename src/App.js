@@ -9,7 +9,7 @@ function App() {
   const cookies = new Cookies();
 
   const handleAdd = () => {
-    cookies.set("abc", "Test Cookie", { path: "/" });
+    cookies.set("abc", "Test Cookie", { path: "/", domain: '.netlify.app' });
   };
 
   const handleRead = () => {
